@@ -18,7 +18,7 @@ public class LinearEquation {
         double expression1 = Math.pow(xCord2 - xCord1, 2);
         double expression2 = Math.pow(yCord2 - yCord1, 2);
         double distance = Math.sqrt(expression1 + expression2);
-        distance = (Math.floor(distance * 100)) / 100;
+        distance = (double) (Math.round(distance * 100)) / 100;
         return distance;
     }
 
@@ -26,7 +26,13 @@ public class LinearEquation {
         double expression1 = yCord2 - yCord1;
         double expression2 = xCord2 - xCord1;
         double slope = expression1 / expression2;
-        slope = (Math.floor(slope * 100)) / 100;
+        slope = (double) (Math.round(slope * 100)) / 100;
         return slope;
+    }
+
+    public String equation() {
+        double yInt = 34;
+        String equation = slope() + "x";
+        return equation;
     }
 }
