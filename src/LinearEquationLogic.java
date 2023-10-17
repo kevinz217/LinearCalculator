@@ -17,15 +17,20 @@ public class LinearEquationLogic {
         String firstCord = scan.nextLine();
         System.out.print("Enter second coordinate: ");
         String secondCord = scan.nextLine();
-
-        line = new LinearEquation(firstCord, secondCord);
+        int halfway = firstCord.indexOf(",");
+        int halfway2 = secondCord.indexOf(",");
+        int x1 = Integer.parseInt(firstCord.substring(1,halfway));
+        int y1 = Integer.parseInt(firstCord.substring(halfway + 2, (firstCord.length() - 1)));
+        int x2 = Integer.parseInt(secondCord.substring(1,halfway2));
+        int y2 = Integer.parseInt(secondCord.substring(halfway2 + 2, (secondCord.length() - 1)));
+        line = new LinearEquation(x1, y1, x2, y2);
     }
 
     private void calcStart() {
         boolean input = true;
         while (input) {
             createLine();
-            if
+           // if (line.xCord1
             line.lineInfo();
             System.out.print("Enter a value for x: ");
             double x = scan.nextDouble();

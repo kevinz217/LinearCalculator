@@ -5,13 +5,11 @@ public class LinearEquation {
     private int yCord2;
 
     //constructor to create x and y coordinates
-    public LinearEquation(String firstCord, String secondCord) {
-        int halfway = firstCord.indexOf(",");
-        int halfway2 = secondCord.indexOf(",");
-        xCord1 = Integer.parseInt(firstCord.substring(1,halfway));
-        yCord1 = Integer.parseInt(firstCord.substring(halfway + 2, (firstCord.length() - 1)));
-        xCord2 = Integer.parseInt(secondCord.substring(1,halfway2));
-        yCord2 = Integer.parseInt(secondCord.substring(halfway2 + 2, (secondCord.length() - 1)));
+    public LinearEquation(int x1, int y1, int x2, int y2) {
+        xCord1 = x1;
+        yCord1 = y1;
+        xCord2 = x2;
+        yCord2 = y2;
     }
 
     public double roundToHundredth(double num) {
