@@ -9,7 +9,6 @@ public class LinearEquationLogic {
     }
 
     public void start() {
-        createLine();
         calcStart();
     }
 
@@ -22,9 +21,21 @@ public class LinearEquationLogic {
         line = new LinearEquation(firstCord, secondCord);
     }
 
-    // currently only used for testing methods
     private void calcStart() {
-        System.out.println("The distance of the line is: " + line.distance());
-        System.out.println("The slope of the line is: " + line.slope());
+        boolean input = true;
+        while (input) {
+            createLine();
+            if
+            line.lineInfo();
+            System.out.print("Enter a value for x: ");
+            double x = scan.nextDouble();
+            scan.nextLine();
+            System.out.println("The point on the line is " + "(" + x + ", " + line.coordinateForX(x) +")");
+            System.out.print("Would you like to enter another pair of coordinates? y/n ");
+            String ans = scan.nextLine();
+            if (ans.equals("n")) {
+                input = false;
+            }
+        }
     }
 }
