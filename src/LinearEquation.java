@@ -40,7 +40,7 @@ public class LinearEquation {
 
     public String equation() {
         String equation = "y = ";
-        equation+= (yCord2 - yCord1) + "/" + (xCord2 - xCord1) + "x " + "+" + yIntercept();
+        equation+= (yCord2 - yCord1) + "/" + (xCord2 - xCord1) + "x " + "+ " + yIntercept();
         if (slope() == 0) {
             return "y = " + yIntercept();
         }
@@ -52,11 +52,15 @@ public class LinearEquation {
     }
 
     public void lineInfo() {
-        System.out.println("\n -------- Line Info --------");
-        System.out.println("The two points are " + "(" + xCord1 + ", " + yCord1 + ") " + "and " + "(" + xCord2 + ", " + yCord2 + ") " );
-        System.out.println("The equation of this line is: " + equation());
-        System.out.println("The slope of this line is: " + slope());
-        System.out.println("The y-intercept of this line is: " + yIntercept());
-        System.out.println("The distance of this line is: " + distance());
+        if (xCord1 == xCord2) {
+            System.out.println("These points are on a vertical line: x = " + xCord1);
+        } else {
+            System.out.println("\n -------- Line Info --------");
+            System.out.println("The two points are " + "(" + xCord1 + ", " + yCord1 + ") " + "and " + "(" + xCord2 + ", " + yCord2 + ") ");
+            System.out.println("The equation of this line is: " + equation());
+            System.out.println("The slope of this line is: " + slope());
+            System.out.println("The y-intercept of this line is: " + yIntercept());
+            System.out.println("The distance of this line is: " + distance());
+        }
     }
 }
