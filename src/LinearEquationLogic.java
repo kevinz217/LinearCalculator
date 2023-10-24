@@ -31,11 +31,12 @@ public class LinearEquationLogic {
         while (input) {
             createLine();
             line.lineInfo();
-            // add if statement to see if the x's are the same
-            System.out.print("Enter a value for x: ");
-            double x = scan.nextDouble();
-            scan.nextLine();
-            System.out.println("The point on the line is " + "(" + x + ", " + line.coordinateForX(x) + ")");
+            if (line.getX1() != line.getX2()) {
+                System.out.print("Enter a value for x: ");
+                double x = scan.nextDouble();
+                scan.nextLine();
+                System.out.println("The point on the line is " + "(" + x + ", " + line.coordinateForX(x) + ")");
+            }
             System.out.print("Would you like to enter another pair of coordinates? y/n ");
             String ans = scan.nextLine();
             if (ans.equals("n")) {

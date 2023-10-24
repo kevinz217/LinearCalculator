@@ -12,6 +12,14 @@ public class LinearEquation {
         yCord2 = y2;
     }
 
+    public int getX1() {
+        return xCord1;
+    }
+
+    public int getX2() {
+        return xCord2;
+    }
+
     public double roundToHundredth(double num) {
         return (double) (Math.round(num * 100)) /100;
     }
@@ -53,14 +61,14 @@ public class LinearEquation {
 
     public void lineInfo() {
         if (xCord1 == xCord2) {
-            System.out.println("These points are on a vertical line: x = " + xCord1);
+            System.out.println("\n" + "These points are on a vertical line: x = " + xCord1 + "\n");
         } else {
             System.out.println("\n -------- Line Info --------");
             System.out.println("The two points are " + "(" + xCord1 + ", " + yCord1 + ") " + "and " + "(" + xCord2 + ", " + yCord2 + ") ");
             System.out.println("The equation of this line is: " + equation());
             System.out.println("The slope of this line is: " + slope());
             System.out.println("The y-intercept of this line is: " + yIntercept());
-            System.out.println("The distance of this line is: " + distance());
+            System.out.println("The distance of this line is: " + distance() + "\n");
         }
     }
 }
