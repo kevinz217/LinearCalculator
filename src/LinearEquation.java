@@ -43,32 +43,47 @@ public class LinearEquation {
     public double yIntercept() {
         double divNum = xCord2 - xCord1;
         double yPerx = (yCord2 - yCord1) / divNum;
-        return yCord1 - (xCord1 * yPerx);
+        return roundToHundredth(yCord1 - (xCord1 * yPerx));
     }
 
     public String equation() {
         String equation = "y = ";
-        equation+= (yCord2 - yCord1) + "/" + (xCord2 - xCord1) + "x " + "+ " + yIntercept();
+        int numerator = yCord2 - yCord1;
+        int denominator = xCord2 - xCord1;
+        if (numerator % denominator == 0) {
+            int slope = (int) slope();
+            equation+= slope + "x " + "+ " + yIntercept();
+        } else {
+            equation+= (numerator) + "/" + (denominator) + "x " + "+ " + yIntercept();
+        }
         if (slope() == 0) {
+            if (yIntercept() % 1 == 0) {
+                return "y = " + (int) yIntercept();
+            }
             return "y = " + yIntercept();
+        }
+        if (yIntercept() == 0) {
+            return "y = "  + (yCord2 - yCord1) + "/" + (xCord2 - xCord1) + "x ";
         }
         return equation;
     }
 
     public double coordinateForX(double x) {
-        return x * slope() + yIntercept();
+        return roundToHundredth(x * slope() + yIntercept());
     }
 
-    public void lineInfo() {
+    public String lineInfo() {
         if (xCord1 == xCord2) {
-            System.out.println("\n" + "These points are on a vertical line: x = " + xCord1 + "\n");
+            return ("\n" + "These points are on a vertical line: x = " + xCord1 + "\n");
         } else {
-            System.out.println("\n -------- Line Info --------");
-            System.out.println("The two points are " + "(" + xCord1 + ", " + yCord1 + ") " + "and " + "(" + xCord2 + ", " + yCord2 + ") ");
-            System.out.println("The equation of this line is: " + equation());
-            System.out.println("The slope of this line is: " + slope());
-            System.out.println("The y-intercept of this line is: " + yIntercept());
-            System.out.println("The distance of this line is: " + distance() + "\n");
+            String info = "";
+            info += ("\n -------- Line Info --------");
+            info +=("\n" + "The two points are " + "(" + xCord1 + ", " + yCord1 + ") " + "and " + "(" + xCord2 + ", " + yCord2 + ") ");
+            info +=("\n" + "The equation of this line is: " + equation());
+            info +=("\n" + "The slope of this line is: " + slope());
+            info +=("\n" + "The y-intercept of this line is: " + yIntercept());
+            info +=("\n" + "The distance of this line is: " + distance() + "\n");
+            return info;
         }
     }
 }

@@ -43,5 +43,6 @@ public class LinearEquationLogic {
                 input = false;
             }
         }
+        System.out.print("Thanks for using the linear calculator!" + "\n");
     }
 }
