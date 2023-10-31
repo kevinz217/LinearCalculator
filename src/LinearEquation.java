@@ -50,9 +50,13 @@ public class LinearEquation {
         String equation = "y = ";
         int numerator = yCord2 - yCord1;
         int denominator = xCord2 - xCord1;
+        if ((numerator < 0 ) && (denominator < 0)) {
+            numerator*= -1;
+            denominator*= -1;
+        }
         if (numerator % denominator == 0) {
-            int slope = (int) slope();
-            equation+= slope + "x " + "+ " + yIntercept();
+            int coefficient = (int) (numerator / denominator);
+            equation+= coefficient + "x " + "+ " + yIntercept();
         } else {
             equation+= (numerator) + "/" + (denominator) + "x " + "+ " + yIntercept();
         }
