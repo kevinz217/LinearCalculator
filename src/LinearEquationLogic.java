@@ -30,7 +30,7 @@ public class LinearEquationLogic {
         boolean input = true;
         while (input) {
             createLine();
-            line.lineInfo();
+            System.out.println(line.lineInfo());
             if (line.getX1() != line.getX2()) {
                 System.out.print("Enter a value for x: ");
                 double x = scan.nextDouble();
